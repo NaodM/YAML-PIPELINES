@@ -1,0 +1,48 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+# Step 1: Create a New Pipeline
+
+# In Azure DevOps, navigate to Pipelines > New Pipeline.
+
+# Select the source of your code (e.g., Azure Repos Git, GitHub, etc.).
+
+# Choose the repository that contains your Terraform configurations.
+
+# Configure the pipeline. You can start with a starter pipeline or use an existing YAML file if you have one.
+
+
+
+
+
+
+# Step 2: Define Pipeline Stages
+# In the YAML configuration for your pipeline, define the stages for init, plan, and apply. Here's an example structure:
+
+
+stages:
+- stage: TerraformInit
+  jobs:
+  - job: TerraformInitJob
+    steps:
+    - script: |
+        terraform init
+      displayName: 'Initialize Terraform'
+
+- stage: TerraformPlan
+  jobs:
+  - job: TerraformPlanJob
+    steps:
+    - script: |
+        terraform plan -out=tfplan
+      displayName: 'Plan Terraform Deployment'
+
+- stage: TerraformApply
+  jobs:
+  - job: TerraformApplyJob
+    steps:
+    - script: |
+        terraform apply -auto-approve tfplan
+      displayName: 'Apply Terraform Deployment'

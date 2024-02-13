@@ -1,0 +1,12 @@
+# Step 3: Configure Terraform Environment
+# Before running Terraform commands, ensure your pipeline has access to required environment variables and secrets, such as cloud provider credentials. This is often achieved using variable groups or service connections in Azure DevOps:
+
+# Navigate to Pipelines > Library to create or edit variable groups.
+
+# Add your cloud provider's credentials and any other required variables.
+
+# Link the variable group to your pipeline in the YAML file:
+
+
+variables:
+- group: your-variable-group-name
