@@ -1,3 +1,5 @@
+#Project Details & Steps
+
 Creating a build pipeline that includes steps for terraform init, terraform plan, and terraform apply is a common practice for implementing Infrastructure as Code (IaC) with Terraform. Below is a general guide on how to set this up using Azure DevOps, a popular platform for CI/CD pipelines.
 
 Prerequisites
